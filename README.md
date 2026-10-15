@@ -1,7 +1,8 @@
 # ShopSmart - AI Shopping Assistant with Tamil AI
 
-Live Demo: https://your-vercel-link.vercel.app
-GitHub: https://github.com/keerthana2026/shopsmart
+Live Demo: https://shop-smart-ai-shopping-assistant-us.vercel.app
+
+GitHub: https://github.com/keerthanaparthi2004-hash/ShopSmart-AI-Shopping-Assistant-using-MERN-Stack
 
 ### Test Login
 Email: keerthana2026@gmail.com
