@@ -181,8 +181,8 @@ export default function Home() {
             <input value={search} onChange={e=>setSearch(e.target.value)} placeholder="Search products... e.g. TV, Shirt, Shoes" className="flex-1 border border-green-100 rounded-md px-4 py-2 text-[12px] bg-white focus:ring-1 focus:ring-[#0f4d2a] outline-none" autoFocus />
             <button onClick={()=>setSearch('')} className="border border-green-100 rounded-md px-3 py-2 text-[11px] bg-white hover:bg-green-50">Clear</button>
           </div>
-          <div className="flex gap-6 mt-6">
-            <div className="w-55 bg-white border border-green-100 rounded-lg p-4 h-fit sticky top-20">
+          <div className="flex flex-col lg:flex-row gap-6 mt-6">
+            <div className="w-full lg:w-55 bg-white border border-green-100 rounded-lg p-4 h-fit lg:sticky lg:top-20">
               <h3 className="text-[12px] font-bold text-[#052e16]">Filters</h3>
               <p className="text-[11px] font-semibold mt-4">Categories</p>
               <div className="mt-2 space-y-2">
@@ -209,7 +209,7 @@ export default function Home() {
             </div>
             <div className="flex-1">
               <p className="text-[11px] text-gray-500">Showing {displayedProducts.length} products {selectedCategory!=='All'? `in ${selectedCategory}` : ''}</p>
-              <div className="grid grid-cols-3 gap-4 mt-3">
+              <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 mt-3">
                 {displayedProducts.map((p,i)=>(
                   <div key={i} className="bg-white border border-green-100 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition">
                     <Link to={`/product/${p.id}`} className={`relative h-45 ${p.bg||'bg-white'} flex items-center justify-center`}>
@@ -248,7 +248,7 @@ export default function Home() {
       </div>
 
       <div className="max-w-5xl mx-auto px-6 mt-10">
-        <div className="grid grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
           <div className="bg-white border border-green-100 rounded-xl p-6 text-center shadow-sm hover:shadow-md transition">
             <div className="w-9 h-9 bg-green-50 rounded-full flex items-center justify-center mx-auto">
             <svg className="w-4 h-4 text-[#0f4d2a]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
@@ -285,7 +285,7 @@ export default function Home() {
           <div><h2 className="text-[14px] font-bold text-[#052e16]">Featured Products</h2></div>
           <button onClick={()=>{setSelectedCategory('All'); setShowShop(true);}} className="text-[10px] border border-green-100 px-3 py-1.5 rounded-md bg-white text-[#052e16] hover:bg-green-50">View All</button>
         </div>
-        <div className="grid grid-cols-4 gap-4 mt-6">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-6">
           {displayFeatured.map((p,i)=>(
             <div key={i} className="bg-white border border-green-100 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition">
               <Link to={`/product/${p.id}`} className={`relative h-45 ${p.bg} flex items-center justify-center`}>
@@ -306,7 +306,7 @@ export default function Home() {
 
       <div className="max-w-5xl mx-auto px-6 pb-10">
         <h2 className="text-[14px] font-bold text-center text-[#052e16]">Shop by Category</h2>
-        <div className="grid grid-cols-4 gap-4 mt-6">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-6">
           {categories.map((c,i)=>(
             <div key={i} onClick={()=>handleCategoryClick(c.name)} className="bg-white border border-green-100 rounded-lg overflow-hidden text-center hover:shadow-md cursor-pointer">
               <div className="h-40 bg-green-50/50 flex items-center justify-center"><p className="text-[11px] text-[#0f4d2a] font-medium">{c.name}</p></div>
